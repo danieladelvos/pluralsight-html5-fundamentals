@@ -1,0 +1,24 @@
+body {
+  background-color: #95a5a6;
+}
+
+input:valid + .invalid { /* Adjacent sibling selector */
+  visibility: hidden;
+}
+
+
+input:invalid + .invalid {
+  visibility: visible;
+}
+
+input:required {
+  border-bottom: 2px solid #c33;
+}
+
+.invalid {
+  color: #999;
+}
+
+input:valid {
+  border-bottom: transparent;
+}

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>HTML5 Example</title>
+
+    <link rel="stylesheet" href="css/index.css">
   </head>
 <body>
 
@@ -171,7 +173,31 @@
           <button class="btn btn-link">Cancel</button>
           <input type="submit" class="btn btn-default" value="Save" />
         </div>
+      </form>
 
+      <form>
+
+        <input type="text"
+               id="username"
+               name="username"
+               pattern="[a-zA-Z ]{5,}"
+               placeholder="username"
+               maxlength="30"
+               required />
+
+        <div class="invalid">
+          The required user name may only be a series of alphabetical characters.
+        </div>
+
+        <input type="emai"
+               id="email"
+               name="email"
+               placeholder="email"
+               required />
+
+        <div class="invalid">
+          The required email address may not include any special characters other than the '.' or '@'.
+        </div>
       </form>
     </section>
   </main>
