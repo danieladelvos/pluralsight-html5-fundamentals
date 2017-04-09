@@ -176,29 +176,47 @@
       </form>
 
       <form>
-
         <input type="text"
                id="username"
+               class="form-control"
                name="username"
-               pattern="[a-zA-Z ]{5,}"
                placeholder="username"
+               pattern="[a-zA-Z ]{5,}"
                maxlength="30"
-               required />
+               required>
 
-        <div class="invalid">
-          The required user name may only be a series of alphabetical characters.
+        <!--<div class="invalid">-->
+          <!--The required user name may only be a series of alphabetical characters.-->
+        <!--</div>-->
+
+        <div class="validation-messages">
+          <span data-rule="valueMissing" class="hide">The username is required.</span>
+          <span data-rule="patternMismatch" class="hide">Must be a series of alpha characters only (min 5, max 30).</span>
         </div>
 
-        <input type="emai"
+        <input type="email"
                id="email"
                name="email"
                placeholder="email"
-               required />
+               title="Email address is required"
+               required
+               class="form-control">
 
-        <div class="invalid">
-          The required email address may not include any special characters other than the '.' or '@'.
+        <!--<div class="invalid">-->
+          <!--The required email address may not include any special characters other than the '.' or '@'.-->
+        <!--</div>-->
+
+        <div class="validation-messages">
+          <span data-rule="valueMissing" class="hide">An email address is required.</span>
+          <span data-rule="typeMismatch" class="hide">Special characters are not allowed.</span>
+        </div>
+
+        <div class="push-down-top">
+          <button type="button" class="btn btn-link">Cancel</button>
+          <button type="button" id="login-button" class="btn">Login</button>
         </div>
       </form>
+
     </section>
   </main>
   <footer>
