@@ -24,6 +24,14 @@
         April 6<sup>th</sup>, 2017
       </time>
     </p>
+    <article>
+      <input list="colors" />
+      <datalist id="colors">
+        <option value="blue"></option>
+        <option value="red"></option>
+        <option value="yellow"></option>
+      </datalist>
+    </article>
 
     <article id="content-container" class="container example-layout">
       <h1>Sredzkistrasse</h1>
@@ -68,10 +76,109 @@
       <p>Donec id odio auctor, molestie lorem dignissim, pretium risus. Nunc eleifend massa at velit aliquam, nec bibendum urna efficitur. In vulputate est nec mattis condimentum. Nulla finibus fermentum ipsum, ac varius nulla malesuada ac. Etiam nec diam porta, congue velit at, porta odio. Etiam nec ante nec leo semper vehicula eu a massa. Nullam elit nulla, finibus sed sem id, tincidunt auctor urna. Donec at feugiat velit. Proin sollicitudin augue et erat aliquam, quis ullamcorper mi gravida. Donec pulvinar ipsum sed fermentum auctor. Etiam posuere ultricies augue elementum semper. Nulla ullamcorper, augue in semper pellentesque, mauris leo faucibus ipsum, quis accumsan elit massa eu velit. Ut cursus elit id tempus laoreet. Phasellus porta ornare ornare. Sed sed accumsan elit. Nam justo urna, rhoncus ut libero vitae, vestibulum semper lectus.</p>
       <p>Phasellus neque nisl, ultricies nec lacus a, pretium placerat lectus. Pellentesque ullamcorper, diam id lacinia luctus, massa ex blandit ante, eget interdum turpis felis id ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus laoreet elementum lectus ac sollicitudin. Sed vestibulum vitae quam et fermentum. Quisque auctor tempor dolor non accumsan. Quisque libero purus, vulputate eget nisi in, dapibus dapibus nisi. Phasellus id hendrerit magna, sed egestas tortor.</p>
     </section>
+    <section>
+      <form novalidate class="narrow">
+        <h2 class="h3">Search</h2>
+
+        <input type="search"
+               id="search-text"
+               class="form-control"
+               placeholder="search"
+               autofocus />
+      </form>
+      <form class="narrow">
+        <h2 class="h3">Contact Info</h2>
+
+        <input type="text"
+               id="name-text"
+               placeholder="first and last name"
+               required
+               pattern="(.*)\s(.*)"
+               class="form-control">
+
+        <input type="email"
+               id="email-text"
+               placeholder="email address"
+               required
+               class="form-control">
+
+        <input type="tel"
+               id="phone-text"
+               placeholder="phone number"
+               required
+               class="form-control">
+
+        <input type="url"
+               id="url-text"
+               placeholder="web address"
+               class="form-control">
+
+        <h2 class="h3">Preferences</h2>
+
+        <input type="number"
+               id="bedrooms-text"
+               placeholder="# of bedrooms"
+               min="1"
+               max="6"
+               class="form-control">
+
+        <h3 class="h4">Days until available to move</h3>
+
+        <div>
+          <div class="col-sm-6">
+            <input type="range"
+                   id="move-range"
+                   min="0" max="120"
+                   step="10" value="30">
+          </div>
+          <div class="col-sm-4">
+            <span id="move-value">30</span>
+          </div>
+        </div>
+
+        <input type="text"
+               id="direction-list"
+               list="direction-data"
+               placeholder="directional preference"
+               class="form-control">
+        <datalist id="direction-data">
+          <option value="north"></option>
+          <option value="south"></option>
+          <option value="east"></option>
+          <option value="west"></option>
+        </datalist>
+
+        <input type="color"
+               id="main-color"
+               value="#ffffff"
+               class="form-control push-down-top">
+
+        <h2 class="h3">Available date</h2>
+
+        <input type="month"
+               class="form-control"
+               value="2017-06" />
+
+        <input type="week"
+               class="form-control"
+               value="2017-W26" />
+
+        <input type="datetime-local"
+               class="form-control"
+               value="2017-06-26T09:30:30" />
+
+        <div class="push-down-top">
+          <button class="btn btn-link">Cancel</button>
+          <input type="submit" class="btn btn-default" value="Save" />
+        </div>
+
+      </form>
+    </section>
   </main>
   <footer>
     <nav>...</nav>
   </footer>
 
+  <script src="js/index.js"></script>
 </body>
 </html>
