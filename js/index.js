@@ -19,10 +19,11 @@ document.addEventListener('DOMContentLoaded', function(e) {
   });
 
   var validate = function () {
-    var messages = document.querySelectorAll('.validation-messages span');
-    forEach.call(messages, function (message){
-      message.classList.add('hide')
+    var messageElements = document.querySelectorAll('.validation-messages span');
+    forEach.call(messageElements, function (element){
+      element.classList.add('hide')
     });
+    validateAgainstCustomRules();
     document.getElementById('change-email-form').checkValidity();
   };
 
@@ -48,6 +49,25 @@ document.addEventListener('DOMContentLoaded', function(e) {
         rule.classList.remove('hide');
       });
     }
+  };
+
+  var validateAgainstPattern = function(element, pattern, ruleName) {
+
+    if (element.value.match(pattern)) {
+      element.setCustomValidity('invalid');
+
+      element.nextElementSibling
+        .querySelector('[data-rule="' + ruleName + '"]')
+        .classList
+        .remove('hide');
+    }
+    else {
+      element.setCustomValidity('');
+    }
+  };
+  
+  var validateAgainstCustomRules = function() {
+    validateAgainstPattern(document.getElementById('email'), /@aol.com/i, "isAol");
   };
 
   var inputElements = document.querySelectorAll('input:not(button)');
