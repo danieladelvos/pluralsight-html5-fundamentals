@@ -22,3 +22,7 @@ input:required {
 input:valid {
   border-bottom: transparent;
 }
+
+.thumbnail {
+  border: 10px double #f00;
+}

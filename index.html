@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--<base href="/">-->    <!-- this is important for many cases. leave here for now. -->
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>HTML5 Example</title>
 
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
   </head>
 <body>
@@ -217,6 +219,23 @@
         </div>
       </form>
 
+    </section>
+    <section>
+      <h3>Video</h3>
+      <video controls width="900">
+        <source src="media/video1.mp4"><!-- Serve first for iPad -->
+        <source src="media/video1.ogv">
+        <source src="media/video1.webm">
+        <p>This browser does not support native video</p>
+      </video>
+
+      <h3>Audio</h3>
+      <audio controls>
+        <source src="media/PolymorphicPodcast-clip.mp3">
+        <source src="media/PolymorphicPodcast-clip.ogg">
+        <source src="media/PolymorphicPodcast-clip.wav">
+        <p>This browser does not support native audio</p>
+      </audio>
     </section>
   </main>
   <footer>

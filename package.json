@@ -1,0 +1,20 @@
+{
+  "name": "pluralsight-html5-fundamentals",
+  "version": "0.1.0",
+  "description": "HTML5",
+  "homepage": "https://github.com/danieladelvos/pluralsight-html5-fundamentals",
+  "license": "MIT",
+  "scripts": {
+    "start": "http-server -p 4000 -a localhost -o"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danieladelvos/pluralsight-html5-fundamentals.git"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}
