@@ -219,18 +219,71 @@
         </div>
       </form>
 
+      <form id="email-form">
+        <input type="text"
+               id="username"
+               class="form-control"
+               placeholder="username"
+               pattern="[a-zA-Z ]{5,}"
+               maxlength="30"
+               title="Username"
+               required
+               data-content="Ausername is required. The username must be a series of alpha-numeric charachters only."
+               data-role="validate">
+
+        <input type="email"
+               id="email"
+               class="form-control"
+               placeholder="email address"
+               title="Email"
+               required
+               data-content="An email address is required."
+               data-role="validate">
+
+        <div class="push-down-top">
+          <button type="button" class="btn btn-link">Cancel</button>
+          <button type="button" id="change-button" data-role="trigger-validation" class="btn">Login</button>
+        </div>
+      </form>
+
+      <div>The form is: <span id="msg"></span></div>
+
     </section>
     <section>
       <h3>Video</h3>
-      <video controls width="900">
+      <video controls loop preload="auto" poster="img/puppies-02.jpg" width="900">
         <source src="media/video1.mp4"><!-- Serve first for iPad -->
         <source src="media/video1.ogv">
         <source src="media/video1.webm">
         <p>This browser does not support native video</p>
       </video>
+      <video id="vid" poster="img/puppies-02.jpg" width="700">
+        <source src="media/video1.mp4" type="video/mp4">
+        <source src="media/video1.webm" type="video/webm">
+      </video>
 
+      <span id="remainingTime">0:00</span>
+      <span id="totalTime">0:00</span>
+
+      <button class="btn btn-sm" id="playPause">Play</button>
+      <button class="btn btn-sm" id="begin">&lt;&lt;</button>
+      <button class="btn btn-sm" id="rewind">&lt;</button>
+      <button class="btn btn-sm" id="fastForward">&gt;</button>
+      <button class="btn btn-sm" id="end">&gt;&gt;</button>
+      <button class="btn btn-sm" id="stop">Stop</button>
+
+      <input type="range" id="volume" min="0" step="0.1" max="1" title="Volume">
+
+      <button class="btn btn-xs" id="mute">Mute</button>
+
+      <input type="range" id="scrubber" min="0" max="14" value="0" step="1">
+
+      <input type="range" id="playbackRate" min="1" value="1" step="1" max="4" title="Playback Speed">
+    </section>
+
+    <section>
       <h3>Audio</h3>
-      <audio controls>
+      <audio controls loop>
         <source src="media/PolymorphicPodcast-clip.mp3">
         <source src="media/PolymorphicPodcast-clip.ogg">
         <source src="media/PolymorphicPodcast-clip.wav">
@@ -243,5 +296,6 @@
   </footer>
 
   <script src="js/index.js"></script>
+  <script src="js/media.js"></script>
 </body>
 </html>
