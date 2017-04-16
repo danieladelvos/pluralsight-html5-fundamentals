@@ -16,7 +16,13 @@
   <main>
     <header>
       <!-- Fixed navbar -->
-      <nav class="navbar navbar-inverse navbar-fixed-top">...</nav>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <ul>
+          <li>
+            <a href="video-01.html">Video 01</a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <p>
       <time datetime="2016-04-06">
@@ -87,8 +93,7 @@
         <input type="search"
                id="search-text"
                class="form-control"
-               placeholder="search"
-               autofocus />
+               placeholder="search" /> <!-- I removed autofocus -->
       </form>
       <form class="narrow">
         <h2 class="h3">Contact Info</h2>
@@ -221,7 +226,7 @@
 
       <form id="email-form">
         <input type="text"
-               id="username"
+               id="username2"
                class="form-control"
                placeholder="username"
                pattern="[a-zA-Z ]{5,}"
@@ -232,7 +237,7 @@
                data-role="validate">
 
         <input type="email"
-               id="email"
+               id="email2"
                class="form-control"
                placeholder="email address"
                title="Email"
@@ -257,28 +262,6 @@
         <source src="media/kitchen.webm">
         <p>This browser does not support native video</p>
       </video>
-      <video id="vid" poster="img/puppies-01.jpg" width="700">
-        <source src="media/kitchen.mp4" type="video/mp4">
-        <source src="media/kitchen.webm" type="video/webm">
-      </video>
-
-      <span id="remainingTime">0:00</span>
-      <span id="totalTime">0:00</span>
-
-      <button class="btn btn-sm" id="playPause">Play</button>
-      <button class="btn btn-sm" id="begin">&lt;&lt;</button>
-      <button class="btn btn-sm" id="rewind">&lt;</button>
-      <button class="btn btn-sm" id="fastForward">&gt;</button>
-      <button class="btn btn-sm" id="end">&gt;&gt;</button>
-      <button class="btn btn-sm" id="stop">Stop</button>
-
-      <input type="range" id="volume" min="0" step="0.1" max="1" title="Volume">
-
-      <button class="btn btn-xs" id="mute">Mute</button>
-
-      <input type="range" id="scrubber" min="0" max="14" value="0" step="1">
-
-      <input type="range" id="playbackRate" min="1" value="1" step="1" max="4" title="Playback Speed">
     </section>
 
     <section>
@@ -296,6 +279,5 @@
   </footer>
 
   <script src="js/index.js"></script>
-  <script src="js/media.js"></script>
 </body>
 </html>

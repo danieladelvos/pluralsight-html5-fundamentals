@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--<base href="/">-->    <!-- this is important for many cases. leave here for now. -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML5 Example</title>
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<main>
+  <section>
+    <h3>Video</h3>
+    <video id="video01" poster="img/puppies-01.jpg"
+           data-firstfile="kitchen" data-secondfile="video1" width="700">
+      <source src="media/kitchen.mp4" type="video/mp4">
+      <source src="media/kitchen.webm" type="video/webm">
+      <source src="media/kitchen.ogv" type="video/ogg">
+    </video>
+
+    <span id="remainingTime">0:00</span>
+    <span id="totalTime">0:00</span>
+
+    <button class="btn btn-sm" id="playPause">Play</button>
+    <button class="btn btn-sm" id="begin">&lt;&lt;</button>
+    <button class="btn btn-sm" id="rewind">&lt;</button>
+    <button class="btn btn-sm" id="fastForward">&gt;</button>
+    <button class="btn btn-sm" id="end">&gt;&gt;</button>
+    <button class="btn btn-sm" id="stop">Stop</button>
+
+    <input type="range" id="volume" min="0" step="0.1" max="1" title="Volume">
+
+    <button class="btn btn-xs" id="mute">Mute</button>
+
+    <input type="range" id="scrubber" min="0" max="14" value="0" step="1">
+
+    <input type="range" id="playbackRate" min="1" value="1" step="1" max="4" title="Playback Speed">
+  </section>
+</main>
+
+<script src="js/video-01.js"></script>
+</body>
+</html>

@@ -1,20 +1,26 @@
 document.addEventListener('DOMContentLoaded', function(e) {
-  var
-    video = document.getElementById('vid'),
-    remainingTime = document.getElementById('remainingTime'),
-    totalTime = document.getElementById('totalTime'),
-    playPause = document.getElementById('playPause'),
-    stop = document.getElementById('stop'),
-    rewind = document.getElementById('rewind'),
-    begin = document.getElementById('begin'),
-    end = document.getElementById('end'),
-    fastForward = document.getElementById('fastForward'),
-    volume = document.getElementById('volume'),
-    mute = document.getElementById('mute'),
-    scrubber = document.getElementById('scrubber'),
-    playbackRate = document.getElementById('playbackRate'),
-    TIME_STEP = 5,
-    vol = 0;
+  var video = document.getElementById('video01'),
+      remainingTime = document.getElementById('remainingTime'),
+      totalTime = document.getElementById('totalTime'),
+      playPause = document.getElementById('playPause'),
+      stop = document.getElementById('stop'),
+      rewind = document.getElementById('rewind'),
+      begin = document.getElementById('begin'),
+      end = document.getElementById('end'),
+      fastForward = document.getElementById('fastForward'),
+      volume = document.getElementById('volume'),
+      mute = document.getElementById('mute'),
+      scrubber = document.getElementById('scrubber'),
+      playbackRate = document.getElementById('playbackRate'),
+      TIME_STEP = 5,
+      vol = 0,
+      firstFileName,
+      secondFileName,
+      forEach;
+
+  forEach = Array.prototype.forEach;
+  firstFileName = video.getAttribute('data-firstfile');
+  secondFileName = video.getAttribute('data-secondfile');
 
   var formatTime = function (seconds) {
     seconds = Math.round(seconds);
@@ -37,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
     }
     else {
       video.pause();
-      video.pause.innerText = 'Play';
+      playPause.innerText = 'Play';
     }
   };
 
@@ -56,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
     video.currentTime = 0;
   }, false);
 
-  rewind.addEventlistener('click', function() {
+  rewind.addEventListener('click', function() {
     video.currentTime -= TIME_STEP;
     }, false);
 
@@ -102,6 +108,22 @@ document.addEventListener('DOMContentLoaded', function(e) {
   video.addEventListener('play', function() {
     totalTime.innerText = formatTime(video.duration);
   }, false); //I added false here
+
+  video.addEventListener('ended', function() {
+    var sources = this.getElementsByTagName('source');
+
+    playPause.innerText = 'Play';
+
+    // check to see if the last video is not loaded
+    if(sources[0].src.indexOf(secondFileName) === -1) {
+      forEach.call(sources, function(source) {
+        source.src = source.src.replace(firstFileName, secondFileName);
+      });
+
+      this.load();
+      this.play();
+    }
+  }, false);
 
   video.addEventListener('timeupdate', function() {
     remainingTime.innerText = formatTime(video.currentTime);
