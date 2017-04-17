@@ -1,13 +1,26 @@
 document.addEventListener('DOMContentLoaded', function(e) {
   var canvas, context;
-  canvas = document.getElementById('canvas');
+  canvas = document.querySelector('#canvas');
 
-  if (canvas && canvas.getContext) {
+  if (Modernizr.canvas) {
+
     context = canvas.getContext('2d');
+
   context.beginPath();
-  context.moveTo(75, 50);
-  context.lineTo(75, 100);
-  context.lineTo(25, 100);
+  context.moveTo(100, 100);
+  context.lineTo(100, 300);
+  context.lineTo(150, 300);
+  context.lineTo(150, 155);
+  context.lineTo(205, 155);
+  context.lineTo(205, 100);
+  context.closePath();
+
+  context.fillStyle = '#0099ff';
   context.fill();
+
+  context.lineWidth = 6;
+  context.lineJoin = 'round';
+  context.strokeStyle = '#cccccc';
+  context.stroke();
   }
 });
