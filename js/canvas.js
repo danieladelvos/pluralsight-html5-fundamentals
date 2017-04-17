@@ -4,36 +4,47 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
   context = canvas.getContext('2d');
 
-  //red box
+  var g1 = context.createRadialGradient(
+    160,  // x coord of grad. start
+    120,  // y coord of grad. start
+    0,    // radius of start circle
+    320,  // x coord of grad. end
+    220,  // y coord of grad. end
+    300); // radius of end circle
+  g1.addColorStop(0, '#ffffff');
+  g1.addColorStop(1, '#999999');
 
-  context.fillStyle = 'rgb(255, 0, 0)';
-  context.fillRect(
-    50,   // x coord
-    50,   // y coord
-    100,  // width
-    100); // height
+  // base circle
 
-  // blue box (with transparency)
+  context.lineWidth = 0;
+  context.strokeStyle = '#000000';
+  context.fillStyle = g1;
+  context.beginPath();
+  context.arc(
+    180,  // x coord of arc start
+    180,  // y coord of arc start
+    160,  // radius
+    0,    // start angle
+    Math.PI * 2,  // end angle
+    true);  // anticlockwise
 
-  context.fillStyle = 'rgba(0, 0, 255, 0.5)';
-  context.fillRect(
-    80,   // x coord
-    80,   // y coord
-    100,  // width
-    100); // height
+  context.fill();
 
-  // clear box
+  var g2 = context.createRadialGradient(
+    360, 320, 0, 260, 220, 200);
+  g2.addColorStop(0, '#ffffff');
+  g2.addColorStop(1, '#999999');
 
-  context.clearRect(
-    115,    // x coord
-    115,    // y coord
-    20,     // width
-    20);    // height
+  // inner circle
 
-  // green outline
+  context.fillStyle = g2;
+  context.beginPath();
+  context.arc(180, 180, 130, 0, Math.PI * 2, true);
+  context.fill();
 
-  context.strokeStyle = 'rgb(51, 153, 0)';
-  context.lineWidth = 6;
-  context.strokeRect(115, 115, 20, 20);
+  context.fillStyle = '#ffffff';
+  context.font = '280px Arial';
+  context.fillText('C', 80, 280); 
+
 
 });
