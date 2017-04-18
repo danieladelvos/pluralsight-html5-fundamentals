@@ -59,6 +59,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
   context = canvas.getContext('2d');
 
+  context.translate(50, 50);
+
   var text, img = new Image();
   img.onload = function() {
     context.drawImage(img, 0, 0);
