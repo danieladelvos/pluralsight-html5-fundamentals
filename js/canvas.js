@@ -44,7 +44,38 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
   context.fillStyle = '#ffffff';
   context.font = '280px Arial';
-  context.fillText('C', 80, 280); 
+  context.fillText('C', 80, 280);
 
+    // effects: scale and rotation:
+
+  // show or hide this when using context.rotate(degreesToRadians(-15))
+  var degreesToRadians = function(degrees) {
+    var radians = (degrees * (Math.PI / 180));
+    return radians;
+  }
+
+  var canvas = document.getElementById('canvas');
+  var context = null;
+
+  context = canvas.getContext('2d');
+
+  var img = new Image();
+  img.onload = function() {
+    context.drawImage(img, 0, 0);
+  }
+  img.src = "img/puppies-02.jpg";
+
+  //  un-comment to scale the chart
+  context.scale(.5, .5); // 0.5 orig. size
+  //context.scale(2, 2);  // 2x orig. size
+
+  // arguments do not need to be equal
+  //context.scale(.25, .5);
+
+  // rotation
+  //context.rotate(0.2);
+
+  // show or hide with var degreesToRadians above
+  context.rotate(degreesToRadians(-15));
 
 });
