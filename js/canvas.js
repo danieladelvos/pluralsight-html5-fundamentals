@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
   context = canvas.getContext('2d');
 
-  context.translate(50, 50);
+  context.translate(500, 0);
 
   var text, img = new Image();
   img.onload = function() {
@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
     text = 'will lick your face';
     context.font ='2em Arial';
-    context.strokeText(text, 175, 320);
-    context.fillText(text, 175, 320);
+    context.strokeText(text, 150, 500);
+    context.fillText(text, 150, 500);
 
   }
   img.src = "img/puppies-02.jpg";
