@@ -1,10 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(e) {
-  var canvas, context;
-
   var canvas = document.getElementById('canvas2');
-  var context = null;
+  var context = canvas.getContext('2d');
 
-  context = canvas.getContext('2d');
 
 // red box
   context.fillStyle = 'rgb(255, 0, 0)';
@@ -41,9 +38,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
   context.lineWidth = 6;
   context.strokeRect(115, 115, 20, 20);
 
-  var x = 0, y = 0, frame,
-    canvas = document.getElementById('canvas2'),
-    context = canvas.getContext('2d');
+  var x = 0, y = 0, frame;
 
   var draw = function() {
     if (x <= canvas.width) {
@@ -60,7 +55,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
       clearInterval(frame);
       document.getElementById('result').innerText = 'Animation Complete';
     }
-  }
+  };
+
   frame = setInterval(function() {
     draw();
   }, 25);
