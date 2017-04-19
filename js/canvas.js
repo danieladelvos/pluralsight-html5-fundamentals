@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
   context.fillStyle = '#ffffff';
   context.font = '280px Arial';
-  context.fillText('C', 80, 280);
+  context.fillText('D', 95, 280);
 
     // effects: scale and rotation:
 
