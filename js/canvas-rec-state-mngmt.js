@@ -41,4 +41,28 @@ document.addEventListener('DOMContentLoaded', function(e) {
   context.lineWidth = 6;
   context.strokeRect(115, 115, 20, 20);
 
+  var x = 0, y = 0, frame,
+    canvas = document.getElementById('canvas2'),
+    context = canvas.getContext('2d');
+
+  var draw = function() {
+    if (x <= canvas.width) {
+      context.clearRect(300, 0, 600, 400);
+      context.strokeStyle = 'rgb(139, 0, 0)';
+      context.lineWidth = 8;
+      context.beginPath();
+      context.moveTo(0, 0);
+      context.lineTo(x += 10, y+= 10);
+      context.stroke();
+    }
+
+    else {
+      clearInterval(frame);
+      document.getElementById('result').innerText = 'Animation Complete';
+    }
+  }
+  frame = setInterval(function() {
+    draw();
+  }, 25);
+
 });
