@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
     context.strokeText(text, 150, 500);
     context.fillText(text, 150, 500);
 
-  }
+  };
   img.src = "img/puppies-02.jpg";
 
   //  un-comment to scale the chart
