@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--<base href="/">-->    <!-- this is important for many cases. leave here for now. -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML5 Extract thumbnail from video</title>
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+
+  <style>
+    .hidden {
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+<section>
+  <video id="video" controls loop preload="auto" width="700">
+    <source src="media/kitchen.mp4" type="video/mp4">
+    <source src="media/kitchen.ogv" type="video/ogg">
+    <source src="media/kitchen.webm" type="video/webm">
+  </video>
+</section>
+<section>
+  <button id="btn">
+    Thumbnail
+  </button>
+</section>
+<section id="thumbs"></section>
+<section>
+  <canvas id="canvas-thumbnail" class="hidden" width="1200" height="800"></canvas>
+</section>
+
+
+<script src="js/canvas-thumbnail.js"></script>
+</body>
+</html>
