@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--<base href="/">-->    <!-- this is important for many cases. leave here for now. -->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML5 Drag and Drop Examples</title>
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/drag-and-drop.css">
+</head>
+<body>
+<section>
+  <div id="source-container" data-role="drag-drop-target">
+    <img id="puppies-01" draggable="true" class="img-responsive" src="img/puppies-01.jpg">
+  </div>
+  <div id="target-container" data-role="drag-drop-target"></div>
+</section>
+
+
+<script src="js/drag-and-drop.js"></script>
+</body>
+</html>
