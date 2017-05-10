@@ -13,8 +13,27 @@
   <link rel="stylesheet" href="css/drag-and-drop.css">
 </head>
 <body>
-  <section id="target">Drop Here</section>
-  <button id="clear">Clear</button>
+  <!--<section>-->
+    <!--<div id="source-container" data-role="drag-drop-target">-->
+      <!--<img id="puppies-01" draggable="true" class="img-responsive" src="img/puppies-01.jpg">-->
+    <!--</div>-->
+  <!--</section>-->
+  <!--<button id="clear">Clear</button>-->
+  <!--<section id="target">Drop Here</section>-->
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div id="content"  class="push-down-top">
+        <img src="img/puppies-01.jpg" class="thumbnail img-responsive" />
+        <p class="h3">Another <span style="color: #ff0">beautiful</span> <a href="https://google.com">google.com</a> property.</p>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <button id="clear">Clear</button>
+      <div id="target" class="well push-down-top-sm"><h4>Drop Here</h4></div>
+    </div>
+  </div>
+
 
   <script src="js/drag-drop-types.js"></script>
 </body>

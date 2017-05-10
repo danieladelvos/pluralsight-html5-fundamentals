@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
     cancel(e);
     var target = this, content = '';
     var types = e.dataTransfer.types;
-    if (types.lenth > 0) {
+    if (types.length > 0) {
       if (types[0] === 'Text') {
         target.innerText = e.dataTransfer.getData('Text');
       } else {
